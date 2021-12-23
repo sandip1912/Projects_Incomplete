@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme change</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        .container{
+            position: absolute;
+            width: 90%;
+            height: 90vh;
+            overflow: hidden;
+            margin-left: 5vw;
+        }
+        .slide{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: greenyellow; */
+
+        }
+        .slide1{
+        background: url(2.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        /* border:1px solid yellow; */
+        /* z-index: 10; */
+        }
+        .slide2{
+        background: url(2.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        border:1px solid yellow;
+        left: 50%;
+        /* z-index: 10; */
+        }
+    </style>
+</head>
+<body>
+    <h1>IMAGE COMPARISION</h1>
+    <div class="container">
+        <div class="slide slide1"></div>
+        <div class="slide slide2" id="slide"></div>
+    </div>
+    <script>
+
+        var slide= document.getElementById("slide");
+        window.onmousemove= function(e){
+            var x = e.clientX;
+            slide.style.left = x + 'px';
+        }
+    </script>
+</body>
+</html>

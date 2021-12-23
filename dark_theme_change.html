@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme change</title>
+    <style>
+        :root{
+            --primarry-color:#edf2fc;
+            --secondary-color:#212121;
+            
+
+        }
+        .dark-theme{
+            --primarry-color:#000106;
+            --secondary-color:#fff;
+        }
+        body{
+            background-color: var(--primarry-color);
+        }
+
+        h1{
+            text-align: center;
+            color: var(--secondary-color);
+        }
+        p{
+            color: var(--secondary-color);
+
+        }
+        #switch{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(245, 8, 245);
+            transform: translateX(80vw);
+        }
+    </style>
+</head>
+<body>
+    <h1>DARK-LIGHT THEME CHANGE</h1>
+    <div id="switch"></div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptas velit suscipit, vitae distinctio consectetur minima eveniet cupiditate, maiores dolor laboriosam nostrum temporibus at! Maiores doloribus voluptatem officiis. Facilis, a.</p>
+    <script>
+        var icon =document.getElementById('switch');
+        icon.onclick=function(){
+            document.body.classList.toggle("dark-theme");
+
+            if(document.body.classList.contains("dark-theme")){
+                icon.style.background= "red";
+                // icon.src= "";//sun
+            }
+            else{
+                icon.style.background= "green";
+                //.src= "";moon
+            }
+        }
+    </script>
+</body>
+</html>

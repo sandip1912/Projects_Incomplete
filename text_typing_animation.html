@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+    body{
+         display: flex;   
+         align-items: center;
+         justify-content: center;
+         min-height: 100vh;
+         background-color: #343f4f;
+        }
+        .wrapper{
+            display: inline-flex;
+        }
+        .static-text{
+            color: white;
+            font-size: 75px;
+            font-weight: 500;
+        }
+        .dynamic-text{
+            margin-left: 0px;
+            height: 72px;
+            line-height: 70px;
+            overflow: hidden;
+            /* unhide to inspect  */
+
+        }
+        .dynamic-text li{
+         list-style: none; 
+         position: relative; 
+         height: 100%;; 
+         font-size: 60px;
+         font-weight: 500;
+         color: #fc6d6d;
+         top: 0;
+
+      
+         animation: slide 6s steps(4) infinite;
+         /* steps will be number of words */
+         }
+         @keyframes slide{
+             100%{
+               top: -288px;
+             }
+         }
+         .dynamic-text li span {
+             position: relative;
+             
+         }
+         .dynamic-text li span::after {
+             content: '';
+             left: 0;
+             position: absolute;
+             border-left: 2px solid #fc6d6d;
+             height: 72px;
+             width: 100%;
+             background-color: #343f4f;
+            
+            animation: typing 1.5s steps(15) infinite;
+            /* step alays more than character   */
+         }
+         @keyframes typing{
+             100%{
+                 left:100%;
+                 margin:0 -35px 0 35px;
+             }
+         }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="static-text"> I'm </div>
+        <ul class="dynamic-text">
+            <li><span>LARAVEL Developer</span></li>
+            <li><span>Web Designer</span></li>
+            <li><span>PHP Developer</span></li>
+            <li><span>Freelancer</span></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+<style>
+      
+    .wrapper{
+        display: inline-flex;
+    }
+    .static-text{
+        color: rgb(230, 16, 16);
+        font-size: 2rem;
+        font-weight: 500;
+        z-index: 15;
+    }
+    .dynamic-text{
+        padding-left: 10px;
+        height: 10vh;
+        line-height: 40px;
+        overflow: hidden;
+        z-index: 15;
+        /* unhide to inspect  */
+
+    }
+    .dynamic-text li{
+     list-style: none; 
+     position: relative; 
+     height: 100%;; 
+     font-size: 2rem;
+     font-weight: 500;
+     color: #fc6d6d;
+     top: 0;
+
+  
+     animation: slide 6s steps(4) infinite;
+     /* steps will be number of words */
+     }
+     @keyframes slide{
+         100%{
+           top: -195px;
+         }
+     }
+     .dynamic-text li span {
+         position: relative;
+         
+     }
+     .dynamic-text li span::after {
+         content: '';
+         left: 0;
+         position: absolute;
+         border-left: 2px solid #fc6d6d;
+         height: 72px;
+         width: 100%;
+         background-color: #343f4f;
+        
+        animation: typing 1.5s steps(15) infinite;
+        /* step alays more than character   */
+     }
+     @keyframes typing{
+         100%{
+             left:100%;
+             margin:0 -35px 0 35px;
+         }
+     }
+</style>
+
+
+<div class="wrapper"></div>
+    <div class="static-text"> I'm </div>
+    <ul class="dynamic-text">
+        <li><span>LARAVEL Developer</span></li>
+        <li><span>Web Designer</span></li>
+        <li><span>PHP Developer</span></li>
+        <li><span>Freelancer</span></li>
+    </ul>
+</div>

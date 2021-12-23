@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;padding: 0;height: 100vh;display: flex;justify-content: center;
+            align-items: center;background-color: #23e3c9;
+        }
+        .slider{
+            width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .slides{
+            width: 500%;
+            height: 500px;
+            display: flex;
+        }
+        .slides input{
+            display: none;
+        }
+        .slide{
+            width: 20%;
+            
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: 2s;
+        }
+        .slide img{
+            width: 800px;
+            height: 500px;
+        }
+        .manual-navigation{
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+        }
+        .manual-btn{
+            border:2px solid #829697 ;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .manual-btn:not(:last-child){
+            margin-right: 40px;
+        }
+        .manual-btn:hover{
+            background-color: #40d3dc;
+        }
+        #radio1:checked ~ .first {
+            margin-left: 0;
+        }
+        #radio2:checked ~ .first{
+            margin-left: -20%;
+        }
+        #radio3:checked ~ .first{
+            margin-left: -40%;
+        }
+        #radio4:checked ~ .first{
+            margin-left: -60%;
+        }
+
+        /* css for automatic */
+         .navigation-auto{
+            position: absolute;
+            display: flex;
+            width: 800px;
+            justify-content: center;
+            margin-top: 460px;
+        }
+        .navigation-auto div{
+           border: 2px solid #40d3dc; 
+           padding: 5px;
+           border-radius: 10px;
+           transition: 1s;
+        }
+        .navigation-auto div:not(:last-child){
+            margin-right: 40px;
+        }
+        #radio1:checked ~ .navigation-auto .auto-btn1{
+            background:#40d3dc;
+        }
+        #radio2:checked ~ .navigation-auto .auto-btn2{
+            background:#40d3dc ;
+        }
+        #radio3:checked ~ .navigation-auto .auto-btn3{
+            background:#40d3dc ;
+        }
+        #radio4:checked ~ .navigation-auto .auto-btn4{
+            background:#40d3dc ;
+        } 
+
+        .text1{
+            position: relative;
+            top: 400px;
+            left: 350px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- slider start -->
+    <div class="slider">
+        <div class="slides" id="slidesID">
+            <!-- radio  start -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!-- radio  end -->
+
+            <!-- image start -->
+            <div style="background-image: url(2.jpg);" class="slide first">
+                <span class="text1" style="color: white;z-index: 10;font-size: 2rem;">hello</span>
+               
+            </div>
+            <div style="background-image: url(2.jpg);" class="slide slide2">                
+                <span class="text1" style="color: white;z-index: 10;font-size: 2rem;">hello</span>
+               <!-- <img src="3.jpg" alt=""> -->
+            </div>
+            <div style="background-image: url(2.jpg);" class="slide slide3">                
+                <span class="text1" style="color: white;z-index: 10;font-size: 2rem;">hello</span>
+                <!-- <img src="2.jpg" alt=""> -->
+            </div>
+            <div style="background-image: url(2.jpg);" class="slide slide4">
+                <span class="text1" style="color: white;z-index: 10;font-size: 2rem;">hello</span>
+                <!-- <img src="3.jpg" alt=""> -->
+            </div>
+            
+            <!-- image start -->
+            <!-- automatic navigation start -->
+            <div class="navigation-auto">
+                <div class="auto-btn1"> </div>
+                <div class="auto-btn2"> </div>
+                <div class="auto-btn3"> </div>
+                <div class="auto-btn4"> </div>
+            </div>
+            <!-- automatic navigation end -->
+
+        </div>
+
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn" id="bt-1"></label>
+            <label for="radio2" class="manual-btn" id="bt-2"></label>
+            <label for="radio3" class="manual-btn" id="bt-3"></label>
+            <label for="radio4" class="manual-btn" id="bt-4"></label>
+        </div>
+    </div>
+    <!-- <script>
+        let bt1 =  document.getElementById('radio1');
+        let bt2 =  document.getElementById('radio2');
+        let bt3 =  document.getElementById('radio3');
+        let bt4 =  document.getElementById('radio4');
+        let sl =  document.getElementById('slidesID');
+
+        if(document.getElementById('radio1').checked = true){
+           sl.style.transform = "translatex(0%)";
+           document.getElementsByTagName('radio').checked = false;
+           console.log('radio1');
+        }
+        if(document.getElementById('radio2').checked = true){
+            document.getElementsByTagName('radio').checked = false;
+            sl.style.transform = "translatex(-20%)";
+            console.log('radio2');
+        }
+        if(document.getElementById('radio3').checked = true){
+           sl.style.transform = "translatex(-40%)";
+        document.getElementsByTagName('radio').checked = false;
+        console.log('radio3');
+    }
+    if(document.getElementById('radio4').checked = true){
+            document.getElementsByTagName('radio').checked = false;
+           sl.style.transform = "translatex(-60%)";
+            console.log('radio4');
+        }
+
+    </script> -->
+    <!-- slider end -->
+
+    <script>
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio'  + counter).checked = true;
+            counter++;
+            if( counter > 4){
+                counter = 1;
+            }
+
+        },4000);
+    </script>
+</body>
+</html>

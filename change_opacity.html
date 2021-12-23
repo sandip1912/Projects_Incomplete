@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 50){
+                    $(".topbar").css({"opacity": "0.5"})
+                    // console.log('hello');
+                }
+                else{
+                    $(".topbar").css({"opacity": "1"})
+                    // console.log('hello2');
+                }
+            })
+        })
+    </script>
+    <title>Theme change</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+        }.topbar{
+            width: 100%;
+            height: 30vh;
+            background-color: black;
+            transition: 0.5s;
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            background-color: greenyellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <h1>change opacity</h1> -->
+    <div class="topbar"></div>
+    <section></section>
+    <section></section>
+    
+    
+    
+</body>
+</html>
